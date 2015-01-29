@@ -1,0 +1,106 @@
+%%This is a very basic article template.
+%%There is just one section and two subsections.
+\documentclass[12pt]{article}
+\usepackage{graphicx, subfigure}
+\usepackage{units}
+\usepackage{amsmath}
+\usepackage{bm}    % bold math
+\usepackage{siunitx}
+\usepackage{fancybox}
+% for vector figures
+% \usepackage{tikz}
+% \usetikzlibrary{decorations.pathreplacing, shapes,arrows,backgrounds, calc}
+% for references
+\usepackage{natbib}    % author-year citations
+\def\citeapos#1{\citeauthor{#1}'s (\citeyear{#1})}
+% for tables
+% \usepackage{multirow, array, ctable}
+\usepackage{booktabs}    % for \toprule, \midrule , etc
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[letterpaper, left=1.0in, right=1.0in, top=1.0in,
+bottom=1.0in]{geometry}
+\usepackage{hyperref}
+
+\usepackage[printfigures]{figcaps}
+
+\begin{document}
+\title{\bf Progress Report}
+\author{David Yang}
+\date{24/01/2015}
+\maketitle
+
+%\tableofcontents
+%\pagestyle{empty}    % disables page numbers
+%\thispagestyle{empty}    % single page disables page numbers
+
+\section{Overview of complete work}
+In this week, deterioration of bonding and FRP strength due to moisture intake
+has been modelled based on the existing prediction models. For bonding
+deterioration, \citeapos{ouyang2009analytical} model has been used to relate
+fracture energy degradation with the moisture attack in terms of interface
+region relative humidity (IRRH). For FRP strength deterioration, moisture intake
+has been analyzed in order to use prediction models
+\citep{phani1986hydrothermal, phani1987temperature} obtained from accelerated
+tests in real-world structures. FRP and bonding deterioration due to moisture
+attack have been analyzed for the shear strengthening schemes at year 78 because
+of their large proportion of FRP contribution to the overall shear capacity.
+From the analysis, it can be concluded that:
+\begin{enumerate}
+  \item Nearly all the prediction models are based on accelerated tests. The
+  relation to natural exposure should be considered;
+  \item Opinions on FRP and bonding durability is still very divided;
+  \item Compared with steel corrosion, FRP and bonding deterioration under
+  natural exposure have only a marginal effect on the reliability of the
+  strengthened girder.
+\end{enumerate}
+
+\section{Research results and interpretations}
+
+\subsection{FRP deterioration}
+Moisture has a detrimental effect on the properties of bonding materials in FRP
+(e.g. epoxy). Therefore, the strength deterioration of FRP composites depends
+very much on the epoxy degradation. As a result, experimental results in the
+literature often reveal large scattered or even total opposite trends
+\citep{karbhari2007design, shrestha2015durability, sen2015developments}. In the
+present study, the prediction model proposed by \citet{phani1986hydrothermal,
+phani1987temperature} and reviewed by \citet{karbhari2007design} and
+\citet{davalos2012long} is used to consider the strength deterioration of CFRP
+materials.
+
+
+Since the model is proposed based on the results in accelerated tests, moisture
+intake of CFRP is used to relate the prediction results to scenarios of natural
+exposure. Diffusion coefficient and saturated moisture content of CFRP are based
+on \citet{ouyang2008modeling}. Environmental relative humidity is assumed
+to be 75\%. Results of strength deterioration during 50 years of service are
+shown in Figure~\ref{fig:frp_degradation}.
+\begin{figure}
+ \centering
+ \includegraphics[keepaspectratio=true,
+ width=\textwidth]{frp_degradation.eps}
+ \caption{Time-variant reliability of the RC girder
+ \label{fig:frp_degradation}}
+\end{figure}
+
+\subsection{Bonding deterioration}
+
+
+\subsection{Time-variant reliability considering FRP and bonding deterioration}
+% \begin{figure}
+%  \centering
+%  \includegraphics[keepaspectratio=true,
+%  width=\textwidth]{cmp_pf_plotPf.eps}
+%  \caption{Time-variant reliability of the RC girder
+%  \label{fig:cmp_pf}}
+% \end{figure}
+
+\section{Future plan}
+
+
+% \nocite{*}     % add ref for non-cited refs
+\bibliographystyle{agsm}    % havard style
+\bibliography{references.bib}
+
+\end{document}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="net.sourceforge.texlipse.viewer.launchConfigurationType">
+<stringAttribute key="sumatra PDF.arguments" value="-a &quot;/Applications/Preview.app&quot; %file"/>
+<stringAttribute key="sumatra PDF.command" value="/usr/bin/open"/>
+<stringAttribute key="sumatra PDF.ddeCloseCommand" value=""/>
+<stringAttribute key="sumatra PDF.ddeCloseServer" value=""/>
+<stringAttribute key="sumatra PDF.ddeCloseTopic" value=""/>
+<stringAttribute key="sumatra PDF.ddeViewCommand" value="[ForwardSearch(&quot;%file&quot;,&quot;%texfile&quot;,%line,0)]"/>
+<stringAttribute key="sumatra PDF.ddeViewServer" value="SUMATRA"/>
+<stringAttribute key="sumatra PDF.ddeViewTopic" value="control"/>
+<stringAttribute key="viewerCurrent" value="sumatra PDF"/>
+</launchConfiguration>

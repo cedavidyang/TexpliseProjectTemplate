@@ -1,0 +1,169 @@
+%%This is a very basic article template.
+%%There is just one section and two subsections.
+\documentclass[12pt]{article}
+\usepackage{graphicx, subfigure}
+\usepackage{units}
+\usepackage{amsmath}
+\usepackage{bm}    % bold math
+\usepackage{siunitx}
+\usepackage{fancybox}
+% for vector figures
+% \usepackage{tikz}
+% \usetikzlibrary{decorations.pathreplacing, shapes,arrows,backgrounds, calc}
+% for references
+\usepackage{natbib}    % author-year citations
+\def\citeapos#1{\citeauthor{#1}'s (\citeyear{#1})}
+% for tables
+% \usepackage{multirow, array, ctable}
+\usepackage{booktabs}    % for \toprule, \midrule , etc
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[letterpaper, left=1.0in, right=1.0in, top=1.0in,
+bottom=1.0in]{geometry}
+\usepackage{hyperref}
+
+\usepackage[printfigures]{figcaps}
+
+\begin{document}
+\title{\bf Progress Report}
+\author{David Yang}
+\date{24/01/2015}
+\maketitle
+
+%\tableofcontents
+%\pagestyle{empty}    % disables page numbers
+%\thispagestyle{empty}    % single page disables page numbers
+
+\section{Overview of complete work}
+In this week, deterioration of bonding and FRP strength due to moisture intake
+has been modelled based on the existing prediction models. For bonding
+deterioration, \citeapos{ouyang2009analytical} model has been used to relate
+fracture energy degradation with the moisture attack in terms of interface
+region relative humidity (IRRH). For FRP strength deterioration, moisture intake
+has been analyzed in order to use prediction models
+\citep{phani1986hydrothermal, phani1987temperature} obtained from accelerated
+tests in real-world structures. FRP and bonding deterioration due to moisture
+attack have been analyzed for the shear strengthening schemes at year 78 because
+of their large proportion of FRP contribution to the overall shear capacity.
+From the analysis, it can be concluded that:
+\begin{enumerate}
+  \item Nearly all the prediction models are based on accelerated tests. The
+  relation to natural exposure should be considered;
+  \item Opinions on FRP and bonding durability is still very divided;
+  \item Compared with steel corrosion, FRP and bonding deterioration under
+  natural exposure have only a marginal effect on the reliability of the
+  strengthened girder.
+\end{enumerate}
+
+\section{Research results and interpretations}
+
+\subsection{FRP deterioration}
+Moisture has a detrimental effect on the properties of bonding materials in FRP
+(e.g. epoxy). Therefore, the strength deterioration of FRP composites depends
+very much on the epoxy degradation. As a result, experimental results in the
+literature often reveal large scattered or even total opposite trends
+\citep{karbhari2007design, shrestha2015durability, sen2015developments}. In the
+present study, the prediction model proposed by \citet{phani1986hydrothermal,
+phani1987temperature} and reviewed by \citet{karbhari2007design} and
+\citet{davalos2012long} is used to consider the strength deterioration of CFRP
+materials.
+
+
+Since the model is proposed based on the results in accelerated tests, moisture
+intake of CFRP is used to relate the prediction results to scenarios of natural
+exposure. Diffusion coefficient and saturated moisture content of CFRP are based
+on \citet{ouyang2008modeling}. Environmental relative humidity is assumed
+to be 75\%. Results of strength deterioration during 50 years of service are
+shown in Figure~\ref{fig:frp_degradation}.
+\begin{figure}
+ \centering
+ \includegraphics[keepaspectratio=true,
+ width=\textwidth]{frp_degradation.eps}
+ \caption{Deterioration of FRP strength
+ \label{fig:frp_degradation}}
+\end{figure}
+
+\subsection{Bonding deterioration}
+Similar to FRP deterioration, bonding deterioration due to moisture can also be
+very scattered because of the different epoxy materials used. In addition, the
+strengthening durability is also effected by other factors such as surface
+treatment. In the present study, bonding deterioration is determined by the
+empirical formula proposed by \citet{ouyang2009analytical}
+(Eq.~\ref{eq:bond_degrade}), in which the fracture energy of bonding is related
+to interface region relative humidity (IRRH).
+\begin{equation}
+\label{eq:bond_degrade}
+{{G}_{f}}\left( H \right)={{G}_{f0}}\left( 1-\frac{1-\beta }{1+{{\left\{
+\left[ 1-H\left( x,y,t \right) \right]/\left( 1-{{H}_{d}} \right)
+\right\}}^{n}}} \right)
+\end{equation}
+
+
+In order to obtain the IRRH at the bonding interface, finite element method for
+Fourier heat transfer is used due to its analogy to diffusion problems
+\citep{ouyang2008modeling}. Parameters used in the analysis can be found in
+\citet{ouyang2008modeling}. The epoxy thickness is assumed to be \unit[1]{mm}
+\citep{tuakta2011deterioration}, and the three layers of wet lay-up fabric sheet
+are assumed to be \unit[2]{mm} in total. Girder dimension can be found in the
+previous report. IRRH distribution at year 50 is shown in
+Figure~\ref{fig:IRRH_distribution}. Development of IRRH at bond interface is
+shown in Figure~\ref{fig:IRRH_development}. The corresponding fracture energy
+can be determined by virtue of Eq.~\ref{eq:bond_degrade} and is presented in
+Figure~\ref{fig:Gf_development}. According to \citet{ouyang2009analytical},
+debonding strength is proportional to the square root of the ratio of
+the average fracture energy after exposure to the original fracture energy, as
+shown in Eq.~\ref{eq:Gf_degrade}. Figure~\ref{fig:bond_degrade} illustrates the
+deterioration of debonding strength.
+\begin{equation}
+\label{eq:Gf_degrade}
+\frac{\sigma_{deb} \left(t\right)}{\sigma} =
+\frac{\bar{G}_f\left(t\right)}{G_{f0}}
+\end{equation}
+
+\begin{figure}
+ \centering
+ \includegraphics[keepaspectratio=true,
+ width=\textwidth]{section_diffusion_shear_coarse_3layer.eps}
+ \caption{IRRH distribution after 50 years of service
+ \label{fig:IRRH_distribution}}
+\end{figure}
+\begin{figure}
+ \centering
+ \includegraphics[keepaspectratio=true,
+ width=\textwidth]{IRRH_development.eps}
+ \caption{IRRH development at bonding interface
+ \label{fig:IRRH_development}}
+\end{figure}
+\begin{figure}
+ \centering
+ \includegraphics[keepaspectratio=true,
+ width=\textwidth]{Gf_development.eps}
+ \caption{Fracture energy development at bonding interface
+ \label{fig:Gf_development}}
+\end{figure}
+\begin{figure}
+ \centering
+ \includegraphics[keepaspectratio=true,
+ width=\textwidth]{bond_degrade.eps}
+ \caption{Bonding deterioration
+ \label{fig:bond_degrade}}
+\end{figure}
+
+\subsection{Time-variant reliability considering FRP and bonding deterioration}
+% \begin{figure}
+%  \centering
+%  \includegraphics[keepaspectratio=true,
+%  width=\textwidth]{cmp_pf_plotPf.eps}
+%  \caption{Time-variant reliability of the RC girder
+%  \label{fig:cmp_pf}}
+% \end{figure}
+
+\section{Future plan}
+
+
+% \nocite{*}     % add ref for non-cited refs
+\bibliographystyle{agsm}    % havard style
+\bibliography{references.bib}
+
+\end{document}

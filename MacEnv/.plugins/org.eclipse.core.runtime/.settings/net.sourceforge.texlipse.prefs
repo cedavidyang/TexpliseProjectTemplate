@@ -1,4 +1,4 @@
-buildEnvSet=PATH\=/opt/local/bin\:/opt/local/sbin\:/Users/amadeus/Library/Enthought/Canopy_64bit/User/bin\:/opt/local/bin\:/opt/local/sbin\:/usr/bin\:/bin\:/usr/sbin\:/sbin\:/usr/local/bin\:/usr/texbin
+buildEnvSet=PATH_OLD\=/opt/local/bin\:/opt/local/sbin\:/Users/amadeus/Library/Enthought/Canopy_64bit/User/bin\:/opt/local/bin\:/opt/local/sbin\:/usr/bin\:/bin\:/usr/sbin\:/sbin\:/usr/local/bin\:/usr/texbin,PATH\=/usr/bin\:/bin\:/usr/sbin\:/sbin\:/usr/local/bin\:/usr/local/git/bin\:/usr/texbin\:/opt/local/bin
 builderNum=2
 class\ net.sourceforge.texlipse.builder.BiberRunner_prog=/usr/local/texlive/2013/bin/x86_64-darwin/biber
 class\ net.sourceforge.texlipse.builder.BibtexRunner_prog=/usr/local/texlive/2013/bin/x86_64-darwin/bibtex
